@@ -1,3 +1,39 @@
-<h1>Now Playing in Theatres!</h1>
+<head>
+  <title>Now Playing Movies</title>
+ <style>
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
-<h1> <%= @now_playing %> </h1>
+    .movie-box {
+      width: 30%;
+      margin: 1%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .movie-poster {
+      width: 300px; /* Adjust the width of the poster as needed */
+      margin: 0 auto; /* Center the poster horizontally */
+    }
+  </style>
+</head>
+<body>
+  <h1>Now Playing Movies</h1>
+  <div class="movies-container">
+    <% @movies.each do |movie| %>
+      <div class="movie-box">
+        <h2><%= movie["original_title"] %></h2>
+        <p><strong>Overview:</strong> <%= movie["overview"] %></p>
+        <p><strong>Release Date:</strong> <%= movie["release_date"] %></p>
+        <div class="movie-poster">
+          <img src="<%= "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}" %>" alt="<%= movie["original_title"] %> Poster">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

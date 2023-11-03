@@ -16,11 +16,12 @@ get("/now_playing") do
 
   request = Net::HTTP::Get.new(url)
   request["accept"] = "application/json"
-
   request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOK"].to_s.gsub(/[\r\n]/, '')}"
 
   response = http.request(request)
-  @now_playing = response.read_body
+  body = JSON.parse(response.read_body)
+
+  @movies = body["results"] 
 
   erb(:now_playing)
 end 
