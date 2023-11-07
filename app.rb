@@ -43,3 +43,11 @@ get("/trending_tv") do
 
   erb(:trending_tv)
 end
+
+get("/watch_list") do 
+  erb(:watch_list)
+end
+
+get("/trending_people") do 
+  erb(:trending_people)
+end
