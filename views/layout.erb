@@ -4,41 +4,59 @@
     <title>Sinatra Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+    body {
+    color: #302351;
+    background-color: #858cd0;
+    font-family: Verdana;
+    }
+    .table{
+      table-layout: fixed;
+      background-color: #3d364e;
+      padding: 1%;
+      justify-content: space-evenly;
+      color: white;
+      width: 100%
+    }
+    .link{
+      color: white;
+    }
+  </style>
   </head>
 
   <body>
-    <table style="width: 100%" border="1">
+    <table class="table" style="width: 100%">
       <tr>
 
         <td>
-          <a href="/">
+          <a class="link" href="/">
             Home
           </a>
         </td>
 
         <td>
-          <a href="/now_playing">
+          <a class="link" href="/now_playing">
             Now Playing
           </a>
         </td>
 
         <td>
-          <a href="/trending_tv">
+          <a class="link" href="/trending_tv">
             Trending Tv
           </a>
         </td>
 
         <td>
-          <a href="/trending_people">
+          <a class="link" href="/trending_people">
             Trending People
           </a>
         </td>
 
-        <td>
+        <!--<td>
           <a href="/watch_list">
             Watchlist
           </a>
-        </td>
+        </td>-->
 
       </tr>
     </table>

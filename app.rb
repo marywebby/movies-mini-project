@@ -49,5 +49,19 @@ get("/watch_list") do
 end
 
 get("/trending_people") do 
+  url = URI("https://api.themoviedb.org/3/trending/person/day?language=en-US")
+
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+
+  request = Net::HTTP::Get.new(url)
+  request["accept"] = "application/json"
+  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOK"].to_s.gsub(/[\r\n]/, '')}"
+
+  response = http.request(request)
+  body = JSON.parse(response.read_body)
+
+  @trending_people = body["results"] 
+
   erb(:trending_people)
 end

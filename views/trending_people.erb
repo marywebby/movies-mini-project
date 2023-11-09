@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trending Television</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .people-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .people-box {
+      width: 25%;
+      margin: 1%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      background-color: #d5c8f7;
+    }
+
+    .people-poster {
+      border: 1px solid #eeeaf7;
+      width: 100%; /* Make the poster fill the container */
+    }
+    .titles{
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Trending People</h1>
+  <div class="people-container">
+    <% @trending_people.each do |person| %>
+      <div class="people-box">
+        <h2><%= person["name"] %></h2>
+        <p><strong>Occupation:</strong> <%= person["known_for_department"] %></p>
+        <p><strong>Known for:</strong> </p>
+        <% person["known_for"].each do |media| %>
+           <li class="titles"> <%= media["title"] %> </li>
+        <% end %>
+        <div class="people-poster">
+          <img src="<%= "https://image.tmdb.org/t/p/w300#{person["profile_path"]}" %>" alt="<%= person["name"] %> Poster">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
