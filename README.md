@@ -1,7 +1,15 @@
-# sinatra-template
+# 📽️ **_Trending Movies with Sinatra_** 🎞️
 
-Use this repository to create new Sinatra apps. 
+## **_Usage_**
+This app is the most ideal place for checking out all the new, trending, and upcoming media around the world! Explore all that my app has to offer and switch back and fourth throughout the tabs to discover popular movies, tv shows, and people!
 
+## **_Installation_**
+1. Fork the repository.
+2. Set up codespaces, or vscode.
+3. run `gem install 'sinatra'` in the command line. 
+4. run `ruby app.rb` in the command line to deploy the website. 
+
+## **_Additional Information_**
 Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
 
 ```ruby

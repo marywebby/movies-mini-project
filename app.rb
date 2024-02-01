@@ -8,7 +8,7 @@ get("/") do
   erb(:homepage)
 end
 
-get("/now_playing") do
+get("/now-playing") do
   url = URI("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1")
 
   http = Net::HTTP.new(url.host, url.port)
@@ -26,7 +26,7 @@ get("/now_playing") do
   erb(:now_playing)
 end 
 
-get("/trending_tv") do 
+get("/trending-tv") do 
   url = URI("https://api.themoviedb.org/3/trending/tv/day?language=en-US")
 
   http = Net::HTTP.new(url.host, url.port)
@@ -44,11 +44,11 @@ get("/trending_tv") do
   erb(:trending_tv)
 end
 
-get("/watch_list") do 
+get("/watch-list") do 
   erb(:watch_list)
 end
 
-get("/trending_people") do 
+get("/trending-people") do 
   url = URI("https://api.themoviedb.org/3/trending/person/day?language=en-US")
 
   http = Net::HTTP.new(url.host, url.port)
