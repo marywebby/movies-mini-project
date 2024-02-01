@@ -7,7 +7,7 @@ This app is the most ideal place for checking out all the new, trending, and upc
 1. Fork the repository.
 2. Set up codespaces, or vscode.
 3. run `gem install 'sinatra'` in the command line. 
-4. run `ruby app.rb` in the command line to deploy the website. 
+4. run `ruby app.rb` in the command line to deploy the website
 
 ## **_Additional Information_**
 Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
