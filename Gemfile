@@ -2,6 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
+gem "http"
 
 gem "sinatra"
 gem "sinatra-contrib"
@@ -32,6 +33,5 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
   gem "webdrivers"
-  gem "i18n"
-  gem "http" 
+  gem "i18n" 
 end
