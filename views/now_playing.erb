@@ -32,8 +32,10 @@
   </style>
 </head>
 <body>
-  <h1>Now Playing in Theatres!</h1>
-  <div class="movies-container">
+<h1>Now Playing in Theatres!</h1>
+
+<div class="movies-container">
+  <% if @movies && @movies.any? %>
     <% @movies.each do |movie| %>
       <div class="movie-box">
         <h2><%= movie["original_title"] %></h2>
@@ -44,7 +46,10 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <% else %>
+    <p>No movies currently playing.</p>
+  <% end %>
+</div>
 
 </body>
 </html>
