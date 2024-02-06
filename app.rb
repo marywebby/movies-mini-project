@@ -17,7 +17,7 @@ get("/now-playing") do
 
   request = Net::HTTP::Get.new(url)
   request["accept"] = "application/json"
-  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOK"].to_s.gsub(/[\r\n]/, '')}"
+  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOKEN"].to_s.gsub(/[\r\n]/, '')}"
 
   response = http.request(request)
   body = JSON.parse(response.read_body)
@@ -35,7 +35,7 @@ get("/trending-tv") do
 
   request = Net::HTTP::Get.new(url)
   request["accept"] = "application/json"
-  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOK"].to_s.gsub(/[\r\n]/, '')}"
+  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOKEN"].to_s.gsub(/[\r\n]/, '')}"
 
   response = http.request(request)
   body = JSON.parse(response.read_body)
@@ -57,7 +57,7 @@ get("/trending-people") do
 
   request = Net::HTTP::Get.new(url)
   request["accept"] = "application/json"
-  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOK"].to_s.gsub(/[\r\n]/, '')}"
+  request["Authorization"] = "Bearer #{ENV["MOVIE_DB_ACCESS_TOKEN"].to_s.gsub(/[\r\n]/, '')}"
 
   response = http.request(request)
   body = JSON.parse(response.read_body)
