@@ -3,6 +3,7 @@ require "sinatra/reloader"
 require 'uri'
 require 'net/http'
 require "http"
+require 'dotenv/load'
 
 get("/") do
   erb(:homepage)
