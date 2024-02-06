@@ -177,7 +177,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   capybara
-  dotenv
+  dotenv (~> 2.8, >= 2.8.1)
   draft_matchers
   grade_runner
   http
